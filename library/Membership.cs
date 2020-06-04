@@ -6,5 +6,10 @@ namespace MyStore.library
         public Membership()
         {
         }
+
+        public object sale(string v1, int v2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

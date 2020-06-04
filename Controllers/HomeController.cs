@@ -17,11 +17,32 @@ namespace MyStore.Controllers
             return View();
         }
 
-        public IActionResult GetProduct()
+        public IActionResult Sale()
         {
+            string productType = ProductType.PHYSICAL;
             ConcreteCreator factory = new ConcreteCreator();
-            Product products = factory.GetProduct("product");
+
+            Product products = factory.GetProduct(productType);
+
             var PackageSlip = products.sale("Item", 3);
+
+            switch (productType)
+            {
+                case "physical":
+                    //generate packing slip
+                    break;
+                case "book":
+                    //generate packing slip
+                    break;
+                case "membership":
+                    //generate packing slip
+                    break;
+                case "Upgrade":
+                    //generate packing slip
+                    break;
+                default:
+                    break;
+            }
 
             return Json(PackageSlip);
         }
